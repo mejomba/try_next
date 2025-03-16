@@ -1,10 +1,14 @@
 'use client'
-import react from 'react';
+
 import Link from "next/link";
-import {usePathname} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 
 function Navbar() {
     const pathname = usePathname();
+    const router = useRouter();
+    const handelClick = () => {
+        router.back()
+    }
     const navs = [
         {
             title: "Home",
@@ -27,6 +31,7 @@ function Navbar() {
                         ))
                     }
                 </ul>
+                <button onClick={handelClick} className={"bg-amber-500 p-2"}>click</button>
             </nav>
         </div>
     )
