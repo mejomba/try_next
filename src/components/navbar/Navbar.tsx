@@ -25,7 +25,7 @@ function Navbar() {
                 <ul className="flex m-2">
                     {
                         navs.map((nav) => (
-                        <li className="mx-2">
+                        <li className="mx-2" key={nav.title}>
                             <Link href={`${nav.link}`} className={nav.link === pathname ? "text-blue-600": ""}>{nav.title}</Link>
                         </li>
                         ))
